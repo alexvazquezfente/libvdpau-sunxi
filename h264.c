@@ -694,7 +694,7 @@ static VdpStatus h264_decode(decoder_ctx_t *decoder,
 				int j;
 				uint32_t list = 0;
 				for (j = 0; j < 4; j++)
-					if (h->RefPicList0[i + j])
+					if (h->RefPicList0[i + j] && h->RefPicList0[i + j]->surface)
 					{
 						h264_video_private_t *surface_p = (h264_video_private_t *)h->RefPicList0[i + j]->surface->decoder_private;
 						list |= ((surface_p->pos * 2) << (j * 8));
