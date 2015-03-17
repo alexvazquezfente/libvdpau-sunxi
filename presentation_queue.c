@@ -74,7 +74,7 @@ VdpStatus vdp_presentation_queue_target_create_x11(VdpDevice device,
 		goto out_layer;
 
 	args[1] = qt->layer;
-	ioctl(qt->fd, dev->osd_enabled ? DISP_CMD_LAYER_TOP : DISP_CMD_LAYER_BOTTOM, args);
+	ioctl(qt->fd, DISP_CMD_LAYER_TOP, args);
 
 	if (dev->osd_enabled)
 	{
